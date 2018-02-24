@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+float add(int x,int y)
+{
+return x+y;
+}
+
+float subtract(int x,int y)
+{
+return x-y;
+}
+
+float multiply(int x,int y)
+{
+return x*y;
+}
+
+float divide(int x,int y)
+{
+return x/y;
+}
+
+int main()
+{   float a,b,result;  char op;
+    retry:printf("\nenter operator:\n");
+    scanf("%c",&op);           
+    printf("\nenter operands:\n");
+    scanf("%f%f",&a,&b);        
+    switch(op)
+    {
+        case '+':result=add(a,b);break;
+        case '-':result=subtract(a,b);break;
+        case '*':result=multiply(a,b); break;
+        case '/':result=divide(a,b); break;
+        default:printf("\ntry +,-,*,/");goto retry; 
+    }
+    printf("\n%f %c %f = %f\n",a,op,b,result);
+    return 0;
+}
